@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artisan Finder - Find trusted local artisans near you.">
+  <title>Artisan Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#">Artisan<span>Finder</span></a>
+      <nav>
+        <a href="#artisans">Artisans</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="primary-btn" onclick="scrollToArtisans()">Find an Artisan</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">LOCAL SKILLS. TRUSTED HANDS.</p>
+          <h1>Find the right artisan for your next job.</h1>
+          <p class="hero-text">
+            Discover reliable plumbers, electricians, hair stylists, tailors, painters,
+            mechanics and other skilled professionals around you.
+          </p>
+          <div class="search-box">
+            <input id="heroSearch" type="text" placeholder="What service do you need?">
+            <button class="primary-btn" onclick="searchFromHero()">Search</button>
+          </div>
+          <div class="quick-links">
+            <span>Popular:</span>
+            <button onclick="quickSearch('Plumber')">Plumber</button>
+            <button onclick="quickSearch('Electrician')">Electrician</button>
+            <button onclick="quickSearch('Tailor')">Tailor</button>
+            <button onclick="quickSearch('Hair Stylist')">Hair Stylist</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-icon">🛠️</div>
+          <h3>Skilled people. One place.</h3>
+          <p>Compare services, ratings and locations before you make a choice.</p>
+          <div class="mini-stats">
+            <div><strong>120+</strong><span>Artisans</span></div>
+            <div><strong>4.8★</strong><span>Avg. rating</span></div>
+            <div><strong>8</strong><span>Categories</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="artisans" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DISCOVER</p>
+            <h2>Artisans near you</h2>
+          </div>
+          <div class="filters">
+            <input id="searchInput" type="text" placeholder="Search by name or service">
+            <select id="categoryFilter">
+              <option value="All">All categories</option>
+              <option value="Plumber">Plumber</option>
+              <option value="Electrician">Electrician</option>
+              <option value="Tailor">Tailor</option>
+              <option value="Hair Stylist">Hair Stylist</option>
+              <option value="Mechanic">Mechanic</option>
+              <option value="Painter">Painter</option>
+            </select>
+          </div>
+        </div>
+        <div id="artisanGrid" class="artisan-grid"></div>
+        <p id="emptyState" class="empty-state hidden">No artisans match your search.</p>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section light">
+      <div class="container">
+        <div class="center-heading">
+          <p class="eyebrow">SIMPLE PROCESS</p>
+          <h2>How Artisan Finder works</h2>
+        </div>
+        <div class="steps">
+          <article><div class="step-number">1</div><h3>Search</h3><p>Tell us the service you need and browse available artisans.</p></article>
+          <article><div class="step-number">2</div><h3>Compare</h3><p>Check ratings, experience, location and service details.</p></article>
+          <article><div class="step-number">3</div><h3>Connect</h3><p>Choose an artisan and contact them to discuss your job.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about">
+        <div>
+          <p class="eyebrow">ABOUT THE PROJECT</p>
+          <h2>Making local services easier to find.</h2>
+        </div>
+        <p>
+          Artisan Finder is a simple marketplace concept designed to connect customers
+          with skilled local professionals. It focuses on easy discovery, transparent
+          profiles and quick contact.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 Artisan Finder</p>
+      <p>Built as a frontend project</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
